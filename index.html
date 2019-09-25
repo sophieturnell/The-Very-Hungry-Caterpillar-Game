@@ -7,13 +7,52 @@
   <link rel='stylesheet' href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
   <link rel="stylesheet" href="styles/main.css">
   <script src='scripts/app.js'></script>
-
-  <title>Hello World</title>
-  
+  <title>Superfood Snake</title>
 </head>
+
 <body>
+
+  <Header>
+    <h1>Snake</h1>
+  </Header>
   
-<h1>Hi</h1>
+  <main>
+    <div class="flex-container">
+    <!-- Game box -->
+    <div class="gameContainer">
+      <div class="grid"></div>
+    </div>
+
+    <aside class="rightSide">
+    <!-- Stats box -->
+    <div class="statsContainer">
+      <!-- Countdown timer -->
+      <h2>Time Remaining</h2>
+      <div class="countdownTimer">
+        <div class="timeRemaining"><span id="currentCountdown"></span></div>
+      </div>
+    
+      <h2>Score</h2>
+      <div class="scoreBar">
+        <div class="userScore"><span id="scoreDisplay"></span></div>
+      </div>
+    </div>
+
+    <!-- Description box -->
+    <div class="description-container">
+      <h2>Object Name</h2> <br>
+      <p>Info about the object</p><br>
+      <h3>Points Scored</h3><br>
+    </div>
+
+    </aside>
+    <!-- close flex container -->
+    </div> 
+  </main>
+
+  <footer>
+    <small>Made by Sophie</small>
+  </footer>
 
 
 </body>
