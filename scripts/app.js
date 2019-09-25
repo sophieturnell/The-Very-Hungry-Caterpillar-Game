@@ -7,27 +7,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const cells = []
   const snakeArray = [207, 206, 205] //starts square 1
   let direction = 'right'
-  let timer
   let score = 0
   let speedSnake = 400
-  console.log(timer)
-  // SCORE PROGRESS BAR
-  // const userScore = document.querySelector('.userScore')
-  // const scoreDisplay = document.querySelector('.scoreDisplay')
-  // console.log(userScore)
 
-  // if (score <= 10) {
-  //   userScore.style.width = score + '%'
-  // } else {
-  //   userScore.style.width = 100 + '%'
-  // }
+  // SCORE PROGRESS BAR
+  const userScore = document.querySelector('.userScore')
+  const scoreDisplay = document.querySelector('#scoreDisplay')
+
+
+
+
 
   // MAKE GRID
   for (let i = 0; i < width ** 2; i++) {    // start 0, if cell is less than (not equal to) 400, add 1
     const cell = document.createElement('DIV')    // creates a cell to element div
     grid.appendChild(cell)    // adds cell to grid
-    cells.push(cell)    // adds cell to array
+    cells.push(cell)    // adds cell to array 
   }
+
+  food()
 
   // ADDS SNAKE
   function drawSnake() {
@@ -93,13 +91,49 @@ document.addEventListener('DOMContentLoaded', () => {
       cells[snakeArray[0]].classList.remove('food')   // remove food
       snakeArray.unshift(snakeArray[0])    // add cell to snakeArray
       scoreDisplay.innerHTML = score   // push score into HTML
+
+      if (score <= 10) {
+        userScore.style.width = (score * 5) + '%'
+      } else {
+        userScore.style.width = 100 + '%'
+      }
+
       food()    // create more food
     }
     drawSnake()     // redraw snake with additional cell
 
-    timer = setTimeout(moveSnake, speedSnake)
+    const timer = setTimeout(moveSnake, speedSnake)
+    return timer
   }
   moveSnake()     // calls function (includes collide with wall, direction shortcuts, eating food)
+
+ 
+  // //  COUNTDOWN TIMER
+  const timeRemaining = document.querySelector('.timeRemaining')
+  const currentCountdown = document.querySelector('#currentCountdown')
+  let timerNumber = 50
+  let timerId = 0
+ 
+  timerId = setInterval(() => {
+    timerNumber = timerNumber - 1
+    currentCountdown.innerHTML = timerNumber
+    console.log('setInterval working')
+
+    if (timerNumber <= 50000) {
+      timeRemaining.style.width = (timerNumber * 2) + '%'
+      console.log('here')
+    } else {
+      timeRemaining.style.width = 100 + '%'
+    }
+
+  }, 1000)
+
+  setTimeout(() => {
+    clearInterval(timerId)
+  }, 50000)  //runs for 20 seconds before stopping
+  
+  
+
 
 
   // CHANGE DIRECTION OF SNAKE ARRAY
@@ -131,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     drawSnake()
   }
 
+  
   // DON'T GO ON TOP OF ITSELF
   document.addEventListener('keyup', (e) => {
     switch (e.keyCode) {
@@ -144,8 +179,5 @@ document.addEventListener('DOMContentLoaded', () => {
         break
     }
   })
-
-
-  food()
 
 })
