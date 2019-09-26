@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,47 +8,81 @@
   <link rel='stylesheet' href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
   <link rel="stylesheet" href="styles/main.css">
   <script src='scripts/app.js'></script>
-  <title>Superfood Snake</title>
+  <title>The Very Hungry Caterpillar by Eric Carle</title>
 </head>
 
 <body>
 
   <Header>
-    <h1>Snake</h1>
+    <h1>The Very Hungry Caterpillar by Eric Carle </h1>
   </Header>
-  
+
   <main>
     <div class="flexContainer">
-    <!-- Game box -->
-    <div class="gameContainer">
-      <div class="grid"></div>
-    </div>
-
-    <aside class="rightSide">
-    <!-- Stats box -->
-    <div class="statsContainer">
-      <!-- Countdown timer -->
-      <h2>Time Remaining (seconds)</h2>
-      <div class="countdownTimer">
-        <div class="timeRemaining"><span id="currentCountdown"></span></div>
+      <!-- Game box -->
+      <div class="gameContainer">
+        <div class="grid"></div>
       </div>
-    
-      <h2>Score</h2>
-      <div class="scoreBar">
-        <div class="userScore"><span id="scoreDisplay"></span></div>
-      </div>
-    </div>
 
-    <!-- Description box -->
-    <div class="descriptionContainer">
-      <h2>Object Name</h2> <br>
-      <p>Info about the object</p><br>
-      <h3>Points Scored</h3><br>
-    </div>
+      <aside class="rightSide">
+        <!-- Stats box -->
+        <div class="statsContainer">
+          <!-- Countdown timer -->
+          <h2>Time Remaining (seconds)</h2>
+          <div class="countdownTimer">
+            <div class="timeRemaining"><span id="currentCountdown"></span></div>
+          </div>
 
-    </aside>
-    <!-- close flex container -->
-    </div> 
+          <h2>Score</h2>
+          <div class="scoreBar">
+            <div class="userScore"><span id="scoreDisplay"></span></div>
+          </div>
+        </div>
+
+        <!-- Description box -->
+        <div class="descriptionContainer">
+          <h2>Object Name</h2>
+          <p>Info about the object</p>
+
+          <div class="fruitMunchables">
+            <h3>Munchables</h3>
+            <!-- Apples- row 1 -->
+            <div class="fruitRow">
+              <img src="./assets/apple.png" height="10%" width="10%">
+            </div>
+            <!-- Pears - row 2 -->
+            <div class="fruitRow">
+              <img src="./assets/pear.png" height="10%" width="10%">
+              <img src="./assets/pear.png" height="10%" width="10%">
+            </div>
+            <!-- Plums row 3 -->
+            <div class="fruitRow">
+              <img src="./assets/plum.png" height="10%" width="10%">
+              <img src="./assets/plum.png" height="10%" width="10%">
+              <img src="./assets/plum.png" height="10%" width="10%">
+            </div>
+            <!-- Strawberry row 4 -->
+            <div class="fruitRow">
+              <img src="./assets/strawberry.png" height="10%" width="10%">
+              <img src="./assets/strawberry.png" height="10%" width="10%">
+              <img src="./assets/strawberry.png" height="10%" width="10%">
+              <img src="./assets/strawberry.png" height="10%" width="10%">
+            </div>
+            <!-- Orange row 5 -->
+            <div class="fruitRow">
+              <img src="./assets/orange.png" height="10%" width="10%">
+              <img src="./assets/orange.png" height="10%" width="10%">
+              <img src="./assets/orange.png" height="10%" width="10%">
+              <img src="./assets/orange.png" height="10%" width="10%">
+              <img src="./assets/orange.png" height="10%" width="10%">
+            </div>
+          </div>
+
+        </div>
+
+      </aside>
+      <!-- close flex container -->
+    </div>
   </main>
 
   <footer>
@@ -56,4 +91,5 @@
 
 
 </body>
+
 </html>

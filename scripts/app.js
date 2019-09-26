@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let score = 0
   const userScore = document.querySelector('.userScore')
   const scoreDisplay = document.querySelector('#scoreDisplay')
-  
+
+
 
   // MAKE GRID
   for (let i = 0; i < width ** 2; i++) {    // start 0, if cell is less than (not equal to) 400, add 1
@@ -22,26 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.appendChild(cell)    // adds cell to grid
     cells.push(cell)    // adds cell to array 
   }
+  // console.log('grid made')
 
   food()
+  // console.log('food added')
+
+
 
   // ADDS SNAKE
   function drawSnake() {
     snakeArray.forEach(index => cells[index].classList.add('snake'))    // add snake styling to each snakeArray element
   }
-
+  
   // ERASE SNAKE
   function eraseSnake() {
     snakeArray.forEach(index => cells[index].classList.remove('snake'))
-  }
-
-  // ADD RANDOM FOOD
-  function food() {
-    let selectRandomCell = Math.floor(Math.random() * cells.length)
-    while (cells[selectRandomCell].classList.contains('snake')) {
-      selectRandomCell = Math.floor(Math.random() * cells.length)
-    }
-    cells[selectRandomCell].classList.add('food')   // add food to random cell
   }
 
   // GAME OVER
@@ -67,23 +63,45 @@ document.addEventListener('DOMContentLoaded', () => {
       return gameOver
     }
     eraseSnake()
+    // console.log('snake removed')
 
     // DIRECTION OF KEYS
     switch (direction) {
       case 'right': moveSnakeRight()
+        console.log( 'R')
         break
       case 'left': moveSnakeLeft()
+        console.log('L')
         break
       case 'up': moveSnakeUp()
+        console.log('U')
         break
       case 'down': moveSnakeDown()
+        console.log('D')
     }
     killSnake()
+    // console.log('snake killed')
 
     // EAT FOOD
     if (cells[snakeArray[0]].classList.contains('food')) {   // if head cell matches food cell
       score++
-      speedSnake -= 50
+      './assets/apple.png',
+      './assets/pear.png',
+      './assets/pear.png',
+      './assets/plum.png',
+      './assets/plum.png',
+      './assets/plum.png',
+      './assets/strawberry.png',
+      './assets/strawberry.png',
+      './assets/strawberry.png',
+      './assets/strawberry.png',
+      './assets/orange.png',
+      './assets/orange.png',
+      './assets/orange.png',
+      './assets/orange.png',
+      './assets/orange.png'
+
+      speedSnake -= 10
       cells[snakeArray[0]].classList.remove('food')   // remove food
       snakeArray.unshift(snakeArray[0])    // add cell to snakeArray
       scoreDisplay.innerHTML = score   // push score into HTML
@@ -107,11 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
   timerId = setInterval(() => {
     timerNumber = timerNumber - 1
     currentCountdown.innerHTML = timerNumber
-    console.log('setInterval working')
+    // console.log('setInterval working')
 
     if (timerNumber <= 50000) {
       timeRemaining.style.width = (timerNumber * 2) + '%'
-      console.log('here')
+      // console.log('here')
     } else {
       timeRemaining.style.width = 100 + '%'
     }
@@ -157,14 +175,63 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keyup', (e) => {
     switch (e.keyCode) {
       case 37: if (direction !== 'right') direction = 'left'
+        console.log('left key pressed')
         break
       case 38: if (direction !== 'down') direction = 'up'
+        console.log('up key pressed')
         break
       case 39: if (direction !== 'left') direction = 'right'
+        console.log('right key pressed')
         break
       case 40: if (direction !== 'up') direction = 'down'
+        console.log('down key pressed')
         break
+        
     }
   })
+
+
+  // CHANGE FOOD ITEM
+  function changeFoodItem() {
+    console.log('hi')
+    const variousFoods = document.querySelector('.food')
+    const foodArrayURL = [
+      './assets/apple.png',
+      './assets/pear.png',
+      './assets/pear.png',
+      './assets/plum.png',
+      './assets/plum.png',
+      './assets/plum.png',
+      './assets/strawberry.png',
+      './assets/strawberry.png',
+      './assets/strawberry.png',
+      './assets/strawberry.png',
+      './assets/orange.png',
+      './assets/orange.png',
+      './assets/orange.png',
+      './assets/orange.png',
+      './assets/orange.png'
+    ]
+    foodArrayURL.forEach(element => element)
+    
+    variousFoods.style.backgroundImage = `url('${foodArrayURL[score]}')`
+    // console.log(variousFoods)
+
+
+  }
+ 
+  // console.log('foodArray added')
+
+
+  // ADD FOOD TO RANDOM CELL
+  function food() {
+    let selectRandomCell = Math.floor(Math.random() * cells.length)
+    while (cells[selectRandomCell].classList.contains('snake')) {
+      selectRandomCell = Math.floor(Math.random() * cells.length)
+    }
+    cells[selectRandomCell].classList.add('food')   // add food to random cell
+    console.log('add food to random cell')
+    changeFoodItem()
+  }
 
 })

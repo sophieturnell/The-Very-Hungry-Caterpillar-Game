@@ -18,17 +18,16 @@ footer {
 
 h1 {
   background-color: red;
-  
+  margin: 15px;
 }
 
-h1::before  {
+/* h1::before  {
   content: "🍔";
-}
+} */
 
 h2 {
   background-color: cornflowerblue;
-  margin: 0%; 
-  
+  margin: 0%;
 }
 
 h3 {
@@ -51,11 +50,11 @@ p {
   background-color: darkblue;
   display: flex;
   flex-direction: column;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   flex-wrap: wrap;
-  padding: 15px;
-  margin: 10px;
+  padding: 5px;
+  margin: 15px;
   justify-content: center;
   flex-basis: 60%;
   border-radius: 10px;
@@ -64,8 +63,8 @@ p {
 
 .grid{
   background-color: lightskyblue;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   display: flex;
   flex-wrap: wrap;
   height: 100%;
@@ -84,14 +83,10 @@ p {
 }
 
 .food {
-  
-  background-image: url(../assets/watermelon.png);
-  background-size: 100%;
+  background-size: 60%;
   background-position-x: 0px;
   background-position-y: 0px;
   background-repeat: no-repeat;
-
-  
 }
 
 .rightSide {
@@ -106,7 +101,7 @@ p {
   flex-wrap: wrap;
   width: 300px;
   height: 150px;
-  padding: 15px;
+  padding: 5px;
   margin: 15px;
   border-radius: 10px;
 }
@@ -152,8 +147,12 @@ p {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 300px;
-  padding: 15px;
+  height: 42  0px;
+  padding: 5px;
   margin: 15px;
   border-radius: 10px;
+}
+
+.fruitMunchables {
+  padding: 5%;
 }
