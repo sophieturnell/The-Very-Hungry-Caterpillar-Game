@@ -1,22 +1,19 @@
-console.log('working?')
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const width = 20  //amend width here
   const grid = document.querySelector('.grid')
   const cells = []
   const snakeArray = [207, 206, 205] //starts square 1
   let direction = 'right'
-  let score = 0
   let speedSnake = 400
-
+  // //  COUNTDOWN TIMER
+  const timeRemaining = document.querySelector('.timeRemaining')
+  const currentCountdown = document.querySelector('#currentCountdown')
+  let timerNumber = 50
+  let timerId = 0
   // SCORE PROGRESS BAR
+  let score = 0
   const userScore = document.querySelector('.userScore')
   const scoreDisplay = document.querySelector('#scoreDisplay')
-
-
-
-
 
   // MAKE GRID
   for (let i = 0; i < width ** 2; i++) {    // start 0, if cell is less than (not equal to) 400, add 1
@@ -59,8 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-
-
   // MOVE SNAKE
   function moveSnake() {
     // IF COLLIDES WITH WALL GAME OVER
@@ -97,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         userScore.style.width = 100 + '%'
       }
-
       food()    // create more food
     }
     drawSnake()     // redraw snake with additional cell
@@ -109,11 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
  
   // //  COUNTDOWN TIMER
-  const timeRemaining = document.querySelector('.timeRemaining')
-  const currentCountdown = document.querySelector('#currentCountdown')
-  let timerNumber = 50
-  let timerId = 0
- 
   timerId = setInterval(() => {
     timerNumber = timerNumber - 1
     currentCountdown.innerHTML = timerNumber
@@ -131,9 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     clearInterval(timerId)
   }, 50000)  //runs for 20 seconds before stopping
-  
-  
-
 
 
   // CHANGE DIRECTION OF SNAKE ARRAY
@@ -166,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   
-  // DON'T GO ON TOP OF ITSELF
+  // DON'T DOUBLE BACK (DIRECTION)
   document.addEventListener('keyup', (e) => {
     switch (e.keyCode) {
       case 37: if (direction !== 'right') direction = 'left'
