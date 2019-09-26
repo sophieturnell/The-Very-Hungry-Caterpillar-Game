@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let score = 0
   const userScore = document.querySelector('.userScore')
   const scoreDisplay = document.querySelector('#scoreDisplay')
+  
 
   // MAKE GRID
   for (let i = 0; i < width ** 2; i++) {    // start 0, if cell is less than (not equal to) 400, add 1

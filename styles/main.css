@@ -18,6 +18,11 @@ footer {
 
 h1 {
   background-color: red;
+  
+}
+
+h1::before  {
+  content: "🍔";
 }
 
 h2 {
@@ -79,13 +84,14 @@ p {
 }
 
 .food {
-  background-color: blue;
-  border-radius: 30 px;
-  /* background-image: url(assets/watermelon.png); */
-  /* background-image: url(/Users/soph/development/PROJECTS/project-01/assets/watermelon.png); */
-  /* background-image: url(https://pngriver.com/top-36-watermelon-png-transparent-images-1641/watermelon-transparent-png-images-free-download-watermelon_png2646/); */
-  /* background-clip: \01F349; */
-  /* background-clip: 🍉; */
+  
+  background-image: url(../assets/watermelon.png);
+  background-size: 100%;
+  background-position-x: 0px;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
+
+  
 }
 
 .rightSide {
