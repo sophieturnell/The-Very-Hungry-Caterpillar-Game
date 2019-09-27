@@ -29,6 +29,7 @@ h1 {
   /* background-color: red; */
   margin: 15px;
   font-family: bodoni;
+  text-transform: uppercase;
 }
 
 /* h1::before  {
@@ -42,17 +43,24 @@ h2 {
 }
 
 h3 {
-
+  margin: 0%;
   color: rgb(41, 100, 148);
 }
 
 p {
   /* background-color: azure; */
   color: rgb(41, 100, 148);
+  font-style: italic;
+}
+
+small {
+  color: black;
 }
 
 .flexContainer {
   background-image: url("../assets/TVHC background.jpg");
+  /* opacity: 0.1;
+  filter: alpha(opacity=50); */
   background-color: yellow;
   display: flex;
   margin: 10px auto;
@@ -105,6 +113,70 @@ p {
   background-position-x: 0px;
   background-position-y: 0px;
   background-repeat: no-repeat;
+
+  /* @-webkit-keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.heartBeat {
+  -webkit-animation-name: heartBeat;
+  animation-name: heartBeat;
+  -webkit-animation-duration: 1.3s;
+  animation-duration: 1.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+} */
+  
 }
 
 .rightSide {
@@ -171,8 +243,8 @@ p {
   background-color: lightblue;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 42  0px;
+  max-width: 300px;
+  max-height: 400px;
   padding: 5px;
   margin: 15px;
   border-radius: 10px;
