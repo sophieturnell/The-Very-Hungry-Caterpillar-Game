@@ -10,6 +10,36 @@ header {
   /* background-color: aqua; */
 }
 
+.storyPage {
+  min-height: 800px;
+  background-image: url("../assets/variousTVHC.png");
+  /* background-color: aqua; */
+  background-size: 100%;
+  /* background-position-x: 0px;
+  background-position-y: 0px;
+  background-repeat: no-repeat; */
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+
+}
+
+.storyTextBox {
+  display: flex;
+  max-width: 50%;
+  background-color: white;
+  border-radius: 10px;
+  padding:20px;
+  
+}
+
+.bodyText {
+  column-count: 2;
+  column-gap: 40px;
+  color: rgb(41, 100, 148);
+  font-style: italic;
+}
+
 main {
   background-color: lightslategray;
 }
@@ -51,6 +81,8 @@ p {
   /* background-color: azure; */
   color: rgb(41, 100, 148);
   font-style: italic;
+  margin: 2px;
+  
 }
 
 small {
@@ -59,8 +91,6 @@ small {
 
 .flexContainer {
   background-image: url("../assets/TVHC background.jpg");
-  /* opacity: 0.1;
-  filter: alpha(opacity=50); */
   background-color: yellow;
   display: flex;
   margin: 10px auto;
@@ -84,7 +114,9 @@ small {
 }
 
 .grid{
-  background-image: url("../assets/various\ leaves\ etc.png");
+  /* background-image: url("../assets/various\ leaves\ etc.png");
+  opacity: 0.1;
+  filter: alpha(opacity=50); */
   background-size: 100%;
   background-color: lightblue;
   width: 550px;
@@ -105,6 +137,11 @@ small {
   background-color: darkgreen;
   /* background for head
   background-color: #da0048; */
+  border-radius: 20px;
+}
+
+.snakeHead {
+  background-color: crimson;
   border-radius: 20px;
 }
 
@@ -192,7 +229,7 @@ small {
   flex-direction: row;
   flex-wrap: wrap;
   width: 300px;
-  height: 150px;
+  height: 100px;
   padding: 5px;
   margin: 15px;
   border-radius: 10px;
@@ -204,11 +241,10 @@ small {
 .countdownTimer {
   background-color: white;
   width: 100%;
-  height: 12%;
+  height: 17%;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  padding: 0.75%;
 }
 
 .timeRemaining {
@@ -225,9 +261,8 @@ small {
 .scoreBar {
   background-color: white;
   width: 100%;
-  height: 12%;
+  height: 17%;
   border-radius: 10px;
-  padding: 0.75%; 
 }
 
 .userScore {
@@ -240,7 +275,7 @@ small {
 
 /* DESCRIPTION */
 .descriptionContainer {
-  background-color: lightblue;
+  background-color: white;
   display: flex;
   flex-direction: column;
   max-width: 300px;
@@ -248,7 +283,7 @@ small {
   padding: 5px;
   margin: 15px;
   border-radius: 10px;
-  border: white;
+  border: lightblue;
   border-width: thin;
 }
 

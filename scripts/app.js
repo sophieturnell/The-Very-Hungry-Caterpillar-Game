@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid')
   const cells = []
   const snakeArray = [207, 206, 205] //starts square 1
+  
   let direction = 'right'
   let speedSnake = 400
   // //  COUNTDOWN TIMER
@@ -15,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const userScore = document.querySelector('.userScore')
   const scoreDisplay = document.querySelector('#scoreDisplay')
 
-
+  // SNAKE HEAD RENDER
+  // snakeArray[0] = document.querySelectorAll('.snakeHead')
 
   // MAKE GRID
   for (let i = 0; i < width ** 2; i++) {    // start 0, if cell is less than (not equal to) 400, add 1
@@ -34,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function drawSnake() {
     snakeArray.forEach(index => cells[index].classList.add('snake'))    // add snake styling to each snakeArray element
   }
+
+  
   
   // ERASE SNAKE
   function eraseSnake() {
