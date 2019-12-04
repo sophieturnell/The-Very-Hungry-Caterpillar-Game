@@ -21,10 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.appendChild(cell)    // adds cell to grid
     cells.push(cell)    // adds cell to array 
   }
-  // console.log('grid made')
 
+  // ADDS FOOD
   food()
-  // console.log('food added')
 
   // ADDS SNAKE
   function drawSnake() {
@@ -59,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return gameOver
     }
     eraseSnake()
-    // console.log('snake removed')
 
     // DIRECTION OF KEYS
     switch (direction) {
@@ -76,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('D')
     }
     killSnake()
-    // console.log('snake killed')
 
     // EAT FOOD
     if (cells[snakeArray[0]].classList.contains('food')) {   // if head cell matches food cell
@@ -95,13 +92,24 @@ document.addEventListener('DOMContentLoaded', () => {
       './assets/orange.png',
       './assets/orange.png',
       './assets/orange.png',
-      './assets/orange.png'
-
-      speedSnake -= 10
+      './assets/orange.png',
+      './assets/chocolateCake.png',
+      './assets/iceCreamCone.png',
+      './assets/pickle.png',
+      './assets/swissCheese.png',
+      './assets/sliceOfSalami.png',
+      './assets/lolly.png',
+      './assets/cherryPie.png',
+      './assets/sausage.png',
+      './assets/cupcake.png',
+      './assets/watermelon.png'
+      
+      speedSnake -= 10    //increase speed of snake
       cells[snakeArray[0]].classList.remove('food')   // remove food
       snakeArray.unshift(snakeArray[0])    // add cell to snakeArray
       scoreDisplay.innerHTML = score   // push score into HTML
 
+      // SCORE PROGRESS BAR
       if (score <= 10) {
         userScore.style.width = (score * 5) + '%'
       } else {
@@ -181,8 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         break
       case 40: if (direction !== 'up') direction = 'down'
         console.log('down key pressed')
-        break
-        
+        break   
     }
   })
 
@@ -206,18 +213,22 @@ document.addEventListener('DOMContentLoaded', () => {
       './assets/orange.png',
       './assets/orange.png',
       './assets/orange.png',
-      './assets/orange.png'
+      './assets/orange.png',
+      './assets/chocolateCake.png',
+      './assets/iceCreamCone.png',
+      './assets/pickle.png',
+      './assets/swissCheese.png',
+      './assets/sliceOfSalami.png',
+      './assets/lolly.png',
+      './assets/cherryPie.png',
+      './assets/sausage.png',
+      './assets/cupcake.png',
+      './assets/watermelon.png'
     ]
     foodArrayURL.forEach(element => element)
     
     variousFoods.style.backgroundImage = `url('${foodArrayURL[score]}')`
-    // console.log(variousFoods)
-
-
   }
- 
-  // console.log('foodArray added')
-
 
   // ADD FOOD TO RANDOM CELL
   function food() {

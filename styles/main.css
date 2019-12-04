@@ -8,8 +8,12 @@ header {
   /* background-color: aqua; */
 }
 
+.TVHCbanner {
+  height: 100vh;
+}
+
 .storyPage {
-  min-height: 800px;
+  height: 100vh;
   background-image: url("../assets/variousTVHC.png");
   /* background-color: aqua; */
   background-size: 100%;
@@ -24,28 +28,35 @@ header {
 
 .storyTextBox {
   display: flex;
-  max-width: 50%;
+  width: 70vw;
+  height: auto;
   background-color: white;
   border-radius: 10px;
   padding:20px;
+  
   
 }
 
 .bodyText {
   column-count: 2;
-  column-gap: 40px;
+  column-gap: 2vw;
   color: black;
   font-style: italic;
+  font-size: 2vw;
+  margin: 2px;
+ 
 }
 
 main {
   background-color: lightslategray;
+  height: 95vh;
 }
 
 footer {
   /* background-color: pink; */
   color: rgb(41, 100, 148);
-  margin: 10px;
+  margin: 2px;
+  height: 4vh;
 }
 
 @font-face {
@@ -63,10 +74,6 @@ h1 {
 h2 {
   margin: 0%;
   color: rgb(41, 100, 148);
-}
-
-h3 {
-  margin: 0%;
   color: royalblue;
 }
 
@@ -74,6 +81,7 @@ p {
   /* background-color: azure; */
   color: black;
   font-style: italic;
+  font-size: 1vw;
   margin: 2px;
   
 }
@@ -87,7 +95,7 @@ small {
   background-color: yellow;
   display: flex;
   margin: 10px auto;
-  min-height: 100%;
+  min-height: 95vh;
   justify-content: space-around;
 }
 
@@ -95,11 +103,11 @@ small {
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 550px;
-  height: 550px;
+  width: 900px;
+  height: 900px;
   flex-wrap: wrap;
   padding: 5px;
-  margin: 15px;
+  margin: 20px;
   justify-content: center;
   /* flex-basis: 60%; */
   border-radius: 10px;
@@ -112,11 +120,10 @@ small {
   filter: alpha(opacity=50); */
   background-size: 100%;
   background-color: lightblue;
-  width: 550px;
-  height: 550px;
+  width: 900px;
+  height: 900px;
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
   justify-content: center;
   border-radius: 10px;
 }
@@ -139,7 +146,7 @@ small {
 }
 
 .food {
-  background-size: 60%;
+  background-size: 65%;
   background-position-x: 0px;
   background-position-y: 0px;
   background-repeat: no-repeat;
@@ -150,14 +157,14 @@ small {
 }
 
 .buttonsContainer {
-  /* background-color: white;   */
+  background-color: white;  
   display: flex;
   align-items: center;
   justify-content: space-between; 
-  width: 310px;
-  height: 30px; 
-  /* padding: 5px; */
-  margin: 15px;
+  width: 400px;
+  height: 50px; 
+  padding: 5px;
+  margin: 20px;
   border-radius: 10px;
   border: none;
   border-width: 10px;
@@ -169,13 +176,13 @@ button {
   border-radius: 10px;
   border: none;
   color: white;
-  /* padding: 5 %; */
+  margin: 2%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   width: 45%;
-  height: 100%; 
+  height: 70%; 
 }
 
 .statsContainer {
@@ -184,10 +191,10 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 300px;
+  width: 400px;
   height: 100px;
   padding: 5px;
-  margin: 15px;
+  margin: 20px;
   border-radius: 10px;
   border: lightblue;
   border-width: 10px;
@@ -234,10 +241,10 @@ button {
   background-color: white;
   display: flex;
   flex-direction: column;
-  max-width: 300px;
-  max-height: 400px;
-  padding: 5px;
-  margin: 15px;
+  max-width: 400px;
+  max-height: 800px;
+  padding: 2px;
+  margin: 20px;
   border-radius: 10px;
   border: lightblue;
   border-width: thin;
