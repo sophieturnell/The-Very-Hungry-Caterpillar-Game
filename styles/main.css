@@ -4,9 +4,9 @@ body {
   font-family: bodoni;
 }
 
-header {
-  /* background-color: aqua; */
-}
+/* header {
+  background-color: aqua;
+} */
 
 .TVHCbanner {
   height: 100vh;
@@ -140,10 +140,10 @@ small {
   border-radius: 20px;
 }
 
-.snakeHead {
+/* .snakeHead {
   background-color: crimson;
   border-radius: 20px;
-}
+} */
 
 .food {
   background-size: 65%;
@@ -185,6 +185,11 @@ button {
   height: 70%; 
 }
 
+.startButton {
+  
+}
+
+
 .statsContainer {
   
   background-color: white;
@@ -220,7 +225,6 @@ button {
   
 }
 
-/* SCORE */
 .scoreBar {
   background-color: lightblue;
   width: 100%;
