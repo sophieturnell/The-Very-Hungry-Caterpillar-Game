@@ -26,24 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
     cells.push(cell)    // adds cell to array 
   }
 
-  
-
-  // ADDS SNAKE
+  // ADD SNAKE
   function drawSnake() {
     snakeArray.forEach(index => cells[index].classList.add('snake')) // add snake styling to each snakeArray element
-    console.log('snake added')
   }
   
   // ERASE SNAKE
   function eraseSnake() {
     snakeArray.forEach(index => cells[index].classList.remove('snake'))
-    console.log('snake removed')
   }
 
   // GAME OVER
   function gameOver() {
     clearInterval(timerId)
-    eraseSnake()
+    // eraseSnake()
     console.log('game over')
   }
 
@@ -87,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Move Down')
     }
     
-    // EAT FOOD
+    // SNAKE EATS FOOD
     if (cells[snakeArray[0]].classList.contains('food')) {   // if head cell matches food cell
       score++
       './assets/apple.png',
@@ -129,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       food() // create more food
     }
+
     drawSnake() // redraw snake with additional cell
 
     const timer = setTimeout(moveSnake, speedSnake)
@@ -191,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================
 
-  // DON'T DOUBLE BACK (DIRECTION)
+  // DON'T RETRACE STEPS (DIRECTION)
   document.addEventListener('keyup', (e) => {
     e.preventDefault()
     switch (e.keyCode) {
@@ -269,7 +266,9 @@ document.addEventListener('DOMContentLoaded', () => {
     score = 0
     scoreDisplay.innerHTML = score
     // remove food
+    
     // foods start from the begining
+    grid.classList.remove('food')
   })
 
   // START BUTTON
