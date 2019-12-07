@@ -86,35 +86,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // SNAKE EATS FOOD
     if (cells[snakeArray[0]].classList.contains('food')) {   // if head cell matches food cell
       score++
-      './assets/apple.png',
-      './assets/pear.png',
-      './assets/pear.png',
-      './assets/plum.png',
-      './assets/plum.png',
-      './assets/plum.png',
-      './assets/strawberry.png',
-      './assets/strawberry.png',
-      './assets/strawberry.png',
-      './assets/strawberry.png',
-      './assets/orange.png',
-      './assets/orange.png',
-      './assets/orange.png',
-      './assets/orange.png',
-      './assets/orange.png',
-      './assets/chocolateCake.png',
-      './assets/iceCreamCone.png',
-      './assets/pickle.png',
-      './assets/swissCheese.png',
-      './assets/sliceOfSalami.png',
-      './assets/lolly.png',
-      './assets/cherryPie.png',
-      './assets/sausage.png',
-      './assets/cupcake.png',
-      './assets/watermelon.png'
+      // './assets/apple.png',
+      // './assets/pear.png',
+      // './assets/pear.png',
+      // './assets/plum.png',
+      // './assets/plum.png',
+      // './assets/plum.png',
+      // './assets/strawberry.png',
+      // './assets/strawberry.png',
+      // './assets/strawberry.png',
+      // './assets/strawberry.png',
+      // './assets/orange.png',
+      // './assets/orange.png',
+      // './assets/orange.png',
+      // './assets/orange.png',
+      // './assets/orange.png',
+      // './assets/chocolateCake.png',
+      // './assets/iceCreamCone.png',
+      // './assets/pickle.png',
+      // './assets/swissCheese.png',
+      // './assets/sliceOfSalami.png',
+      // './assets/lolly.png',
+      // './assets/cherryPie.png',
+      // './assets/sausage.png',
+      // './assets/cupcake.png',
+      // './assets/watermelon.png'
       
       speedSnake -= 10 //increases speed of snake
       console.log('snake speed', speedSnake)
       cells[snakeArray[0]].classList.remove('food') // remove food
+      cells[snakeArray[0]].style.backgroundImage = '' //
       snakeArray.unshift(snakeArray[0]) // add cell to snakeArray
       scoreDisplay.innerHTML = score // push score into progress bar
       // SCORE PROGRESS BAR
@@ -266,7 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
     score = 0
     scoreDisplay.innerHTML = score
     // remove food
-    
+    // document.querySelector('.food').style.backgroundImage = lightblue
+    grid.classList.remove('div.food')
     // foods start from the begining
     grid.classList.remove('food')
   })
@@ -282,6 +284,16 @@ document.addEventListener('DOMContentLoaded', () => {
     moveSnake()
     countdownTimer()
   })
+
+
+  // STOP DEFAULT SCROLLING
+  window.addEventListener('keydown', function (e) {
+    // space and arrow keys
+    if ([37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+      e.preventDefault()
+    }
+  }, false)
+
 
 })
 
