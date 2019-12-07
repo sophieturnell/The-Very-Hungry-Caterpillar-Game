@@ -14,10 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const userScore = document.querySelector('.userScore')
   const scoreDisplay = document.querySelector('#scoreDisplay') //whole bar
   let score = 0 //score starts at 0
+  // START BUTTON
+  const startButton = document.querySelector('.startButton')
   // RESET BUTTON
-  const resetButton = document.querySelector('button')
-  let timer
-  
+  const resetButton = document.querySelector('.resetButton')
+
   // MAKE GRID
   for (let i = 0; i < width ** 2; i++) {    // start 0, if cell is less than (not equal to) 400 (20x20), add 1
     const cell = document.createElement('DIV')    // creates a cell to class ".grid div"
@@ -25,41 +26,43 @@ document.addEventListener('DOMContentLoaded', () => {
     cells.push(cell)    // adds cell to array 
   }
 
-  // ADDS FOOD
-  food()
+  
 
   // ADDS SNAKE
   function drawSnake() {
     snakeArray.forEach(index => cells[index].classList.add('snake')) // add snake styling to each snakeArray element
+    console.log('snake added')
   }
   
   // ERASE SNAKE
   function eraseSnake() {
     snakeArray.forEach(index => cells[index].classList.remove('snake'))
+    console.log('snake removed')
   }
 
   // GAME OVER
   function gameOver() {
-    // eraseSnake()
-    // speedSnake = 0
-    // WHEN PRESS RESTART BUTTON
-    // speedSnake = 400
-    timerNumber = 50
-    // score = 0
-    // foods start from the begining
+    clearInterval(timerId)
+    eraseSnake()
     console.log('game over')
   }
 
+  // KILL SNAKE
   // SNAKE BITES ITSELF GAME OVER
   function killSnake() {
     if (snakeArray.slice(1).includes(snakeArray[0])) { // if snake body includes snake head game over
+      console.log('snake bites itself')
       return gameOver()
     }
   }
 
+  // ADDS FOOD
+  food()
+
+  // =====================================================================
+
   // MOVE SNAKE
   function moveSnake() {
-
     // IF COLLIDES WITH WALL GAME OVER
     if (snakeArray[0] % width === 0 && direction === 'left' ||
       snakeArray[0] % width === width - 1 && direction === 'right' ||
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       snakeArray[0] >= width * (width - 1) && direction === 'down') {
       return gameOver()
     }
-    // eraseSnake()
+    killSnake()
 
     // DIRECTION OF KEYS
     switch (direction) {
@@ -83,8 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
       case 'down': moveSnakeDown()
         console.log('Move Down')
     }
-    killSnake()
-
+    
     // EAT FOOD
     if (cells[snakeArray[0]].classList.contains('food')) {   // if head cell matches food cell
       score++
@@ -114,11 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
       './assets/cupcake.png',
       './assets/watermelon.png'
       
-      speedSnake -= 10    //increase speed of snake
-      console.log('Cat. speed', speedSnake)
-      cells[snakeArray[0]].classList.remove('food')   // remove food
-      snakeArray.unshift(snakeArray[0])    // add cell to snakeArray
-      scoreDisplay.innerHTML = score   // push score into HTML
+      speedSnake -= 10 //increases speed of snake
+      console.log('snake speed', speedSnake)
+      cells[snakeArray[0]].classList.remove('food') // remove food
+      snakeArray.unshift(snakeArray[0]) // add cell to snakeArray
+      scoreDisplay.innerHTML = score // push score into progress bar
       // SCORE PROGRESS BAR
       if (score <= 10) {
         userScore.style.width = (score * 5) + '%'
@@ -134,26 +136,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   moveSnake() // calls function (includes collide with wall, direction shortcuts, eating food)
 
+  // ==================================================================
 
   // //  COUNTDOWN TIMER
-  timerId = setInterval(() => {
-    timerNumber = timerNumber - 1
-    currentCountdown.innerHTML = timerNumber
-    // console.log('setInterval working')
+  function countdownTimer() {
+    timerId = setInterval(() => {
+      timerNumber = timerNumber - 1
+      currentCountdown.innerHTML = timerNumber
+      // COUNTDOWN PROGRESS BAR
+      if (timerNumber <= 50000) {
+        timeRemaining.style.width = (timerNumber * 2) + '%' //as start 50, 2%=1sec
+      } else {
+        timeRemaining.style.width = 100 + '%'
+      }
+    }, 1000)
 
-    if (timerNumber <= 50000) {
-      timeRemaining.style.width = (timerNumber * 2) + '%' //as start 50, 2%=1sec
-      // console.log('here')
-    } else {
-      timeRemaining.style.width = 100 + '%'
-    }
+    setTimeout(() => {
+      clearInterval(timerId)
+    }, 50000)  //runs for 50 seconds before stopping
+  }
+  countdownTimer()
+  
 
-  }, 1000)
-
-  setTimeout(() => {
-    clearInterval(timerId)
-  }, 50000)  //runs for 20 seconds before stopping
-
+  // ====================================================
 
   // CHANGE DIRECTION OF SNAKE ARRAY
   function moveSnakeDown() {
@@ -184,7 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
     drawSnake()
   }
 
-  
+  // ==========================================================
+
   // DON'T DOUBLE BACK (DIRECTION)
   document.addEventListener('keyup', (e) => {
     e.preventDefault()
@@ -204,11 +210,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
+  // =====================================================================
 
   // CHANGE FOOD ITEM
   function changeFoodItem() {
-    
-    // const variousFoodsCell = document.querySelector('.food')
     const foodArrayURL = [
       './assets/apple.png',
       './assets/pear.png',
@@ -237,9 +242,9 @@ document.addEventListener('DOMContentLoaded', () => {
       './assets/watermelon.png'
     ]
     foodArrayURL.forEach(element => element)
-    
     document.querySelector('.food').style.backgroundImage = `url('${foodArrayURL[score]}')`
   }
+
 
   // ADD FOOD TO RANDOM CELL
   function food() {
@@ -253,28 +258,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // // RESET WITH RESTART BUTTON
-  // function reset() { 
-  //   document.querySelector('.food')
-  //   grid.innerHTML = '' score = 0 timerId = 0 
-  // }
-
-  // // START BUTTON
-  // function startButton() {
-  //   document.querySelector('.startButton')
-  // }
-  // startButton()
-
   // // RESET BUTTON
   resetButton.addEventListener('click', () => {
-    snakeArray.forEach(index => cells[index].classList.remove('snake'))
-    snakeArray = [207, 206 , 205]
-    direction = 'right'
-    clearTimeout(timer)
+    console.log('reset button clicked')
+    eraseSnake()
+    timerNumber = 50
+    timerId = 0
+    currentCountdown.innerHTML = timerNumber
+    timeRemaining.style.width = 100 + '%'
     score = 0
-    scoreDisplay.innerText = score
+    scoreDisplay.innerHTML = score
+    // remove food
+    // foods start from the begining
+  })
+
+  // START BUTTON
+  startButton.addEventListener('click', () => {
+    console.log('start button clicked')
+    snakeArray = [201, 200, 199]
+    direction = 'right'
+    speedSnake = 400
     drawSnake()
+    food()
     moveSnake()
+    countdownTimer()
   })
 
 })
+
+
