@@ -267,8 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
     score = 0
     scoreDisplay.innerHTML = score
     // remove food
-    // document.querySelector('.food').style.backgroundImage = lightblue
-    grid.classList.remove('div.food')
+    // cells.forEach(index => cells[index].classList.remove('food'))
     // foods start from the begining
     grid.classList.remove('food')
   })
