@@ -20,11 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetButton = document.querySelector('.resetButton')
 
   // MAKE GRID
-  for (let i = 0; i < width ** 2; i++) {    // start 0, if cell is less than (not equal to) 400 (20x20), add 1
-    const cell = document.createElement('DIV')    // creates a cell to class ".grid div"
-    grid.appendChild(cell)    // adds cell to grid
-    cells.push(cell)    // adds cell to array 
+  function addGrid() {
+    for (let i = 0; i < width ** 2; i++) {    // start 0, if cell is less than (not equal to) 400 (20x20), add 1
+      const cell = document.createElement('DIV')    // creates a cell to class ".grid div"
+      grid.appendChild(cell)    // adds cell to grid
+      cells.push(cell)    // adds cell to array 
+    }
   }
+  addGrid()
 
   // ADD SNAKE
   function drawSnake() {
@@ -34,12 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // ERASE SNAKE
   function eraseSnake() {
     snakeArray.forEach(index => cells[index].classList.remove('snake'))
+    snakeArray.forEach(index => cells[index].classList.remove('snakeDead'))
   }
 
   // GAME OVER
   function gameOver() {
     clearInterval(timerId)
-    // eraseSnake()
+    snakeArray.forEach(index => cells[index].classList.add('snakeDead'))
     console.log('game over')
   }
 
@@ -48,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function killSnake() {
     if (snakeArray.slice(1).includes(snakeArray[0])) { // if snake body includes snake head game over
       console.log('snake bites itself')
-      return gameOver()
+      // return gameOver()
     }
   }
 
@@ -86,32 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // SNAKE EATS FOOD
     if (cells[snakeArray[0]].classList.contains('food')) {   // if head cell matches food cell
       score++
-      // './assets/apple.png',
-      // './assets/pear.png',
-      // './assets/pear.png',
-      // './assets/plum.png',
-      // './assets/plum.png',
-      // './assets/plum.png',
-      // './assets/strawberry.png',
-      // './assets/strawberry.png',
-      // './assets/strawberry.png',
-      // './assets/strawberry.png',
-      // './assets/orange.png',
-      // './assets/orange.png',
-      // './assets/orange.png',
-      // './assets/orange.png',
-      // './assets/orange.png',
-      // './assets/chocolateCake.png',
-      // './assets/iceCreamCone.png',
-      // './assets/pickle.png',
-      // './assets/swissCheese.png',
-      // './assets/sliceOfSalami.png',
-      // './assets/lolly.png',
-      // './assets/cherryPie.png',
-      // './assets/sausage.png',
-      // './assets/cupcake.png',
-      // './assets/watermelon.png'
-      
       speedSnake -= 10 //increases speed of snake
       console.log('snake speed', speedSnake)
       cells[snakeArray[0]].classList.remove('food') // remove food
@@ -259,6 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // // RESET BUTTON
   resetButton.addEventListener('click', () => {
     console.log('reset button clicked')
+    gameOver()
     eraseSnake()
     timerNumber = 50
     timerId = 0
@@ -266,8 +245,10 @@ document.addEventListener('DOMContentLoaded', () => {
     timeRemaining.style.width = 100 + '%'
     score = 0
     scoreDisplay.innerHTML = score
-    // remove food
+    // REMOVE FOOD
     // cells.forEach(index => cells[index].classList.remove('food'))
+    // grid.forEach(index => cells[index].classList.remove('food'))
+    
     // foods start from the begining
     grid.classList.remove('food')
   })

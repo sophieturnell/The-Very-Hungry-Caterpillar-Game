@@ -135,8 +135,11 @@ small {
 }
 .snake {
   background-color: darkgreen;
-  /* background for head
-  background-color: #da0048; */
+  border-radius: 20px;
+}
+
+.snakeDead {
+  background-color: crimson;
   border-radius: 20px;
 }
 
