@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const timer = setTimeout(moveSnake, speedSnake)
     return timer
   }
-  moveSnake() // calls function (includes collide with wall, direction shortcuts, eating food)
 
   // ==================================================================
 
@@ -131,8 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(timerId)
     }, 50000)  //runs for 50 seconds before stopping
   }
-  countdownTimer()
-  
 
   // ====================================================
 
@@ -228,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     while (cells[selectRandomCell].classList.contains('snake')) {
       selectRandomCell = Math.floor(Math.random() * cells.length)
     }
-    cells[selectRandomCell].classList.add('food')   // add food to random cell
+    cells[selectRandomCell].classList.add('food') // add food to random cell
     console.log('add food to random cell')
     changeFoodItem()
   }
@@ -248,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // REMOVE FOOD
     // cells.forEach(index => cells[index].classList.remove('food'))
     // grid.forEach(index => cells[index].classList.remove('food'))
-    
+
     // foods start from the begining
     grid.classList.remove('food')
   })
@@ -259,9 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     snakeArray = [201, 200, 199]
     direction = 'right'
     speedSnake = 400
-    drawSnake()
-    food()
-    moveSnake()
+    moveSnake() //(includes collide with tail, direction, eating food)
     countdownTimer()
   })
 
