@@ -66,6 +66,7 @@ Use the "clone or download" button and open the index.html file in your browser.
 
 <img src="./assets/TVHCgame-large.jpg">
 
+
 ## Approach
 
 ### Day 1 & 2
@@ -195,9 +196,7 @@ Although the presentation went well, the screen scrolled slightly when using the
   })
 ```  
 
-
 - Stopping the screen from scrolling when using the keys to direct the caterpillar
-
 
 ```JavaScript
   // STOP DEFAULT SCROLLING
@@ -207,7 +206,6 @@ Although the presentation went well, the screen scrolled slightly when using the
     }
   }, false)
 ```
-
 
 - Using the score as the index to determine which food item should be displayed next
 
@@ -247,7 +245,7 @@ Although the presentation went well, the screen scrolled slightly when using the
 ```
 - Removing rogue strawberries that remained after they had been eaten
 
- 
+
 ## Takeaways
 In future I need to be careful not to get overexcited by the planning stage and to focus on hitting the MVP early. Allocating time to styling and experimenting with individual lines of code helped my understanding throughout. It allowed me to visualise the project more clearly and develop ideas on how to solve problems. I found console logging particularly useful for displaying what was running.
 
