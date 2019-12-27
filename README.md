@@ -168,7 +168,24 @@ ___
     }
   }
 ```
+
 ___
+
+## Future Improvements
+
+Minor improvements:
+
+- Animate the list of foods on the right of the screen
+- Add win screen with a butterfly
+- Add styling to the head of the caterpillar
+
+Larger improvements:
+
+- Make the game responsive
+- Add a multi-player mode
+- Add a high score table
+
+---
 
 ## Successes
 - Establishing the correct order of the various functions
@@ -250,21 +267,7 @@ ___
 
 In future I need to be careful not to get overexcited by the planning stage and to focus on hitting the MVP early. Allocating time to styling and experimenting with individual lines of code helped my understanding throughout. It allowed me to visualise the project more clearly and develop ideas on how to solve problems. I found console logging particularly useful for displaying what was running.
 
-___
 
-## Future Improvements
-
-Minor improvements:
-
-- Animate the list of foods on the right of the screen
-- Add win screen with a butterfly
-- Add styling to the head of the caterpillar
-
-Larger improvements:
-
-- Make the game responsive
-- Add a multi-player mode
-- Add a high score table
 
 ___
  
