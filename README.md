@@ -86,7 +86,7 @@ I broke down the game into the following elements:
 - Moving the snake; and
 - Killing the snake when it collides with a wall.
 
-I drafted the logic for these elements as a reference on paper then used pseudocode to build the first digital draft in VS code. I knew I wanted to add a score bar and timer so I factored in space for these in my wireframes and started to build the structure in HTML5, formatting it with the Flexbox layout module in CSS3. 
+I drafted the logic for these elements as a reference on paper then used pseudocode to build the first digital draft in VS Code. I knew I wanted to add a score bar and timer so I factored in space for these in my wireframes and started to build the structure in HTML5, formatting it with the Flexbox layout module in CSS3. 
 
 ### Day 4
 I started to add the logic for the elements outlined above which relied heaviy on trial and error. A combination of lists and adding tasks to a calendar enabled me to effectively manage my time throughout the project. My notebook is now full of amended lists as different items took priority. 
@@ -161,13 +161,13 @@ Although the presentation went well, the screen scrolled slightly when using the
 
 ## Future Improvements
 
-Minor improvements:
+**Minor improvements:**
 
 - Animate the list of foods on the right of the screen
 - Add win screen with a butterfly
 - Add styling to the head of the caterpillar
 
-Larger improvements:
+**Larger improvements:**
 
 - Make the game responsive
 - Add a multi-player mode
@@ -254,7 +254,7 @@ In future I need to be careful not to get overexcited by the planning stage and 
 
 ___
 
-sophieturnell.com  
+
 linkedin.com/in/sophieturnell/
 
 ___
