@@ -1,9 +1,8 @@
 ## ![ga_cog_large_red_rgb](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) Software Engineering Immersive Course
 
 # Project 01 - GAME - The Very Hungry Caterpillar
-<img src="./assets/TVHC.gif">
 
-___
+<img src="./assets/TVHC.gif">
  
 
 ## Brief
@@ -11,24 +10,19 @@ Design a grid-based game using HTML, CSS, and JavaScript technologies learnt in 
 
 Timeframe: 1 week, independent coding
 
-___
  
 ## Summary
-
 My first coding project was built with vanilla JavaScript using Flexbox and CSS3 to apply styling. Although the game is based on the classic Nokia 3210 game 'Snake', I eventually substituted the snake for a caterpillar using Eric Care's 'The Very Hungry Caterpillar' as my inspiration. The Caterpillar must eat the foods shown on the right of the screen in order to win and transform into a butterfly.
 
 I used DOM manipulation to enable the player to guide the caterpillar to eat the array of foods as they appear on the game grid at random. Each bite increases the player's score, and the length and speed of the caterpillar. The game is over if the caterpillar collides with the edge of the board.
 
 <img src="./assets/screenshotGame.jpg">
 
-___
  
 ## Deployment
-
 View code on GitHub here: github.com/sophieturnell/project-01.  
 Use the "clone or download" button and open the index.html file in your browser.  
 
-___
  
 ## Technologies & Methodologies Used
 - HTML5
@@ -41,7 +35,6 @@ ___
 - Adobe Photoshop
 - Adobe Illustrator
 
-___
  
 ## Features
 - When the player presses play the timer starts and the caterpillar begins to move
@@ -68,7 +61,6 @@ ___
 
 - A start button adds new food and a new moving caterpillar
 
-___
  
 ## Website Architecture
 
@@ -139,8 +131,6 @@ I worked on the directions keys for the snake and removed the food when the cell
 ### Day 6
 As there were only two days remaining I decided to work on the CSS and transformed the snake into a caterpillar. I added a progress bar to show the score; a countdown timer; and start/reset buttons. I was up very late trying to get these all to work so in future I will try not to make these sorts of additions at the last minute. 
 
-
-
 ### Day 7
 I underestimated the time required to add CSS. At this point there were several improvements to functionality and styling that I wanted to make and in hindsight I should have focused on the functionality. 
 
@@ -149,7 +139,6 @@ I underestimated the time required to add CSS. At this point there were several 
 
 Although the presentation went well, the screen scrolled slightly when using the direction keys and the start and reset buttons weren't working fully so the user had to refresh the page when they had scrolled to the game screen. I have since fixed this, although there are still some problems I'd like to solve with more time.
 
-___
 
 ## Challenges Still To Overcome
 - Removing the food after the reset button has been pressed
@@ -169,7 +158,6 @@ ___
   }
 ```
 
-___
 
 ## Future Improvements
 
@@ -185,13 +173,11 @@ Larger improvements:
 - Add a multi-player mode
 - Add a high score table
 
----
 
 ## Successes
 - Establishing the correct order of the various functions
 - Adding functionality to the buttons
 
-*Reset button code*  
 ```JavaScript
  // RESET BUTTON
   resetButton.addEventListener('click', () => {
@@ -207,7 +193,7 @@ Larger improvements:
     userScore.style.width = (score * 5) + '%'
     grid.classList.remove('food')
   })
- ```  
+```  
 
 
 - Stopping the screen from scrolling when using the keys to direct the caterpillar
@@ -261,12 +247,9 @@ Larger improvements:
 ```
 - Removing rogue strawberries that remained after they had been eaten
 
-___
  
 ## Takeaways
-
 In future I need to be careful not to get overexcited by the planning stage and to focus on hitting the MVP early. Allocating time to styling and experimenting with individual lines of code helped my understanding throughout. It allowed me to visualise the project more clearly and develop ideas on how to solve problems. I found console logging particularly useful for displaying what was running.
-
 
 
 ___
