@@ -48,16 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // KILL SNAKE
-  // SNAKE BITES ITSELF GAME OVER
+  // SNAKE COLLIDES WITH ITSELF GAME OVER
   function killSnake() {
     if (snakeArray.slice(1).includes(snakeArray[0])) { // if snake body includes snake head game over
       console.log('snake bites itself')
       // return gameOver()
     }
   }
-
-  // ADDS FOOD
-  food()
 
   // =====================================================================
 
@@ -89,11 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // SNAKE EATS FOOD
     if (cells[snakeArray[0]].classList.contains('food')) {   // if head cell matches food cell
+      console.log('snake eats')
       score++
       speedSnake -= 10 //increases speed of snake
       console.log('snake speed', speedSnake)
       cells[snakeArray[0]].classList.remove('food') // remove food
-      cells[snakeArray[0]].style.backgroundImage = '' //
+      cells[snakeArray[0]].style.backgroundImage = '' //remove background image
       snakeArray.unshift(snakeArray[0]) // add cell to snakeArray
       scoreDisplay.innerHTML = score // push score into progress bar
       // SCORE PROGRESS BAR
@@ -129,6 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       clearInterval(timerId)
     }, 50000)  //runs for 50 seconds before stopping
+
+    // TIMER RUNS OUT
+    // if (timerNumber <= 0) {
+    //   return gameOver()
+    // }
   }
 
   // ====================================================
@@ -218,7 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.food').style.backgroundImage = `url('${foodArrayURL[score]}')`
   }
 
-
   // ADD FOOD TO RANDOM CELL
   function food() {
     let selectRandomCell = Math.floor(Math.random() * cells.length)
@@ -231,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // // RESET BUTTON
+  // RESET BUTTON
   resetButton.addEventListener('click', () => {
     console.log('reset button clicked')
     gameOver()
@@ -242,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
     timeRemaining.style.width = 100 + '%'
     score = 0
     scoreDisplay.innerHTML = score
+    userScore.style.width = (score * 5) + '%'
     // REMOVE FOOD
     // cells.forEach(index => cells[index].classList.remove('food'))
     // grid.forEach(index => cells[index].classList.remove('food'))
@@ -250,9 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.classList.remove('food')
   })
 
+
+  
+
   // START BUTTON
   startButton.addEventListener('click', () => {
     console.log('start button clicked')
+    food()
     snakeArray = [201, 200, 199]
     direction = 'right'
     speedSnake = 400
@@ -263,7 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // STOP DEFAULT SCROLLING
   window.addEventListener('keydown', function (e) {
-    // space and arrow keys
     if ([37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault()
     }

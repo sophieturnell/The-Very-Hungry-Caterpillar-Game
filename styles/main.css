@@ -44,19 +44,18 @@ body {
   font-style: italic;
   font-size: 2vw;
   margin: 2px;
- 
 }
 
 main {
-  background-color: lightslategray;
-  height: 95vh;
+  background-color: white;
+  height: 97vh;
 }
 
 footer {
   /* background-color: pink; */
   color: rgb(41, 100, 148);
-  margin: 2px;
-  height: 4vh;
+  margin: 0;
+  height: 3vh;
 }
 
 @font-face {
@@ -88,6 +87,7 @@ p {
 
 small {
   color: black;
+  font-size: 2vh;
 }
 
 .flexContainer {
@@ -95,7 +95,7 @@ small {
   background-color: yellow;
   display: flex;
   margin: 10px auto;
-  min-height: 95vh;
+  min-height: 96vh;
   justify-content: space-around;
 }
 
@@ -187,11 +187,6 @@ button {
   width: 45%;
   height: 70%; 
 }
-
-/* .startButton {
-
-} */
-
 
 .statsContainer {
   
