@@ -91,7 +91,7 @@ I drafted the logic for these elements as a reference on paper then used pseudoc
 ### Day 4
 I started to add the logic for the elements outlined above which relied heaviy on trial and error. A combination of lists and adding tasks to a calendar enabled me to effectively manage my time throughout the project. My notebook is now full of amended lists as different items took priority. 
 
-*A huge win: moving the snake*  
+*First big success: moving the snake*  
 <img src="./assets/snakeMovement.jpg">
 
 ```JavaScript
