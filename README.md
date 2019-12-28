@@ -10,7 +10,7 @@ Design a grid-based game using HTML, CSS, and JavaScript technologies learnt in 
 
 Timeframe: 1 week, independent coding
 
- 
+
 ## Summary
 My first coding project was built with vanilla JavaScript using Flexbox and CSS3 to apply styling. Although the game is based on the classic Nokia 3210 game 'Snake', I eventually substituted the snake for a caterpillar using Eric Care's 'The Very Hungry Caterpillar' as my inspiration. The Caterpillar must eat the foods shown on the right of the screen in order to win and transform into a butterfly.
 
@@ -18,12 +18,12 @@ I used DOM manipulation to enable the player to guide the caterpillar to eat the
 
 <img src="./assets/screenshotGame.jpg">
 
- 
+
 ## Deployment
 View code on GitHub here: github.com/sophieturnell/project-01.  
 Use the "clone or download" button and open the index.html file in your browser.  
 
- 
+
 ## Technologies & Methodologies Used
 - HTML5
 - CSS3
@@ -35,7 +35,7 @@ Use the "clone or download" button and open the index.html file in your browser.
 - Adobe Photoshop
 - Adobe Illustrator
 
- 
+
 ## Features
 - When the player presses play the timer starts and the caterpillar begins to move
 - The player can change the direction of the caterpillar using the up, down, left and right keys
@@ -61,7 +61,7 @@ Use the "clone or download" button and open the index.html file in your browser.
 
 - A start button adds new food and a new moving caterpillar
 
- 
+
 ## Website Architecture
 
 <img src="./assets/TVHCgame-large.jpg">
