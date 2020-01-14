@@ -253,7 +253,7 @@ In future I need to be careful not to get overexcited by the planning stage and 
 ___
 
 
-linkedin.com/in/sophieturnell
+www.linkedin.com/in/sophieturnell
   
 www.sophieturnell.com
 
