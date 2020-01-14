@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid') //links css to grid in JS
   const cells = []
   let snakeArray = [201, 200, 199] //starts squares 199 - 201
+  // const snakeHead = snakeArray[0]
+  // console.log(snakeHead)
   let direction = 'right'
   let speedSnake = 400 //speed at start
   // //  COUNTDOWN TIMER
