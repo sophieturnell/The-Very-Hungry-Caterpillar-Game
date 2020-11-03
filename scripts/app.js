@@ -1,35 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const width = 20  //amend width here
-  const grid = document.querySelector('.grid') //links css to grid in JS
+  // GRID
+  const width = 20
+  const grid = document.querySelector('.grid')
   const cells = []
-  let snakeArray = [201, 200, 199] //starts squares 199 - 201
-  // const snakeHead = snakeArray[0]
-  // console.log(snakeHead)
+
+  // SNAKE AT START
+  let snakeArray = [201, 200, 199] //starts in squares 199 - 201
   let direction = 'right'
   let speedSnake = 400 //speed at start
+
   // //  COUNTDOWN TIMER
-  const timeRemaining = document.querySelector('.timeRemaining')
+  const timeRemaining = document.querySelector('.timeRemaining') //decreasing bar
   const currentCountdown = document.querySelector('#currentCountdown') //whole bar
   let timerNumber = 50 //timer starts at 50
   let timerId = 0
+
   // SCORE PROGRESS BAR
-  const userScore = document.querySelector('.userScore')
+  const userScore = document.querySelector('.userScore') //decreasing bar
   const scoreDisplay = document.querySelector('#scoreDisplay') //whole bar
-  let score = 0 //score starts at 0
-  // START BUTTON
+  let score = 0
+
+  // BUTTONS
   const startButton = document.querySelector('.startButton')
-  // RESET BUTTON
   const resetButton = document.querySelector('.resetButton')
 
+
   // MAKE GRID
-  function addGrid() {
+  function createGrid() {
     for (let i = 0; i < width ** 2; i++) {    // start 0, if cell is less than (not equal to) 400 (20x20), add 1
-      const cell = document.createElement('DIV')    // creates a cell to class ".grid div"
-      grid.appendChild(cell)    // adds cell to grid
-      cells.push(cell)    // adds cell to array 
+      const cell = document.createElement('DIV')
+      grid.appendChild(cell)    // adds cell to grid class
+      cells.push(cell)    // adds cell to cells array
     }
   }
-  addGrid()
+  
+  createGrid()
 
   // ADD SNAKE
   function drawSnake() {
@@ -63,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // MOVE SNAKE
   function moveSnake() {
     // IF COLLIDES WITH WALL GAME OVER
-    if (snakeArray[0] % width === 0 && direction === 'left' ||
+    if (snakeArray[0] % width === 0 && direction === 'left' || //if no remainder going left will kill
       snakeArray[0] % width === width - 1 && direction === 'right' ||
       snakeArray[0] - width < 0 && direction === 'up' ||
       snakeArray[0] >= width * (width - 1) && direction === 'down') {
@@ -92,10 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
       score++
       speedSnake -= 10 //increases speed of snake
       console.log('snake speed', speedSnake)
-      cells[snakeArray[0]].classList.remove('food') // remove food
+      cells[snakeArray[0]].classList.remove('food')
       cells[snakeArray[0]].style.backgroundImage = '' //remove background image
       snakeArray.unshift(snakeArray[0]) // add cell to snakeArray
       scoreDisplay.innerHTML = score // push score into progress bar
+
       // SCORE PROGRESS BAR
       if (score <= 10) {
         userScore.style.width = (score * 5) + '%'
@@ -105,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       food() // create more food
     }
 
-    drawSnake() // redraw snake with additional cell
+    drawSnake() // redraw snake (adding additional cell if snake has just eaten)
 
     const timer = setTimeout(moveSnake, speedSnake)
     return timer
@@ -120,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
       currentCountdown.innerHTML = timerNumber
       // COUNTDOWN PROGRESS BAR
       if (timerNumber <= 50000) {
-        timeRemaining.style.width = (timerNumber * 2) + '%' //as start 50, 2%=1sec
+        timeRemaining.style.width = (timerNumber * 2) + '%' //as starts at 50, 2% = 1sec
       } else {
         timeRemaining.style.width = 100 + '%'
       }
@@ -129,11 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       clearInterval(timerId)
     }, 50000)  //runs for 50 seconds before stopping
-
-    // TIMER RUNS OUT
-    // if (timerNumber <= 0) {
-    //   return gameOver()
-    // }
   }
 
   // ====================================================
@@ -254,8 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // foods start from the begining
     grid.classList.remove('food')
   })
-
-
   
 
   // START BUTTON
